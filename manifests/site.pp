@@ -52,4 +52,11 @@ node default {
     content => "Welcome, oh great Puppppet Master!\n",
   }
 
+  file_line { 'testing.puppetlabs.vm':
+   ensure => present,
+   path => '/etc/hosts',
+   line => "127.0.0.1     testing.puppetlabs.vm     #Added by puppet/n"
+   
+  
+  }
 }
