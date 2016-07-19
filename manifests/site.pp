@@ -50,5 +50,5 @@ file { '/etc/motd':
   owner => 'root',
   group => 'root',
   mode => '0444',
-  content => 'Welcome, oh great Puppppet Master!',
+  content => "Welcome, oh great Puppppet Master!\n",
 }
