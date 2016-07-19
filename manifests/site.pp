@@ -56,7 +56,5 @@ node default {
    ensure => present,
    path => '/etc/hosts',
    line => "127.0.0.1     testing.puppetlabs.vm     #Added by puppet/n"
-   
-  
   }
 }
