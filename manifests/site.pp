@@ -27,7 +27,7 @@ node default {
   host_aliases => ['foo', 'foobar'],
   }
 
-  #Exercise 9.2
+  #Exercise 9.2 - declare the fundamentals user
   include users
 
 }
