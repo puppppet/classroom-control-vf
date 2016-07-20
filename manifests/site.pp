@@ -53,8 +53,13 @@ node default {
   }
 
   file_line { 'testing.puppetlabs.vm':
-   ensure => present,
+   ensure => absent,
    path => '/etc/hosts',
    line => "127.0.0.1     testing.puppetlabs.vm     #Added by puppet/n"
+  }
+  
+  host { 'testing.puppetlabs.vm':
+  ensure => present,
+  ip => '127.0.0.1',
   }
 }
