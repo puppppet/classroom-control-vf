@@ -39,5 +39,5 @@ node /puppppet/ {
 
   include memcached
   include skeleton
-  
+  include nginx
 }
