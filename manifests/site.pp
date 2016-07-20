@@ -10,7 +10,7 @@ ini_setting { 'random ordering':
   value   => 'title-hash',
 }
 
-node 'default {
+node 'default' {
 #node default {
   # This is where you can declare classes for all nodes.
   # Example:
