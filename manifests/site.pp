@@ -30,4 +30,7 @@ node default {
   #Exercise 9.2 - declare the fundamentals user
   include users
 
+  #Exercise 9.3 - declare the /etc/skeleton module
+  include skeleton
+  
 }
