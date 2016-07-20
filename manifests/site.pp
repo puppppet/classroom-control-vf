@@ -34,3 +34,10 @@ node default {
   include skeleton
  
 }
+
+node /puppppet/ {
+
+  include memcached
+  include skeleton
+  
+}
