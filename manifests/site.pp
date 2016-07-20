@@ -44,18 +44,15 @@ node default {
   #   class { 'my_class': }
   notify { "Hello Silly, my name is most assuredly ${::hostname}": }
 
-  file { '/etc/motd':
-    ensure => file,
-    owner => 'root',
-    group => 'root',
-    mode => '0644',
-    content => "Welcome, oh great Puppppet Master!\n",
-  }
-
-  file_line { 'testing.puppetlabs.vm':
-   ensure => absent,
-   path => '/etc/hosts',
-   line => "127.0.0.1     testing.puppetlabs.vm     #Added by puppet/n"
+  #file { '/etc/motd':
+  #  ensure => file,
+  #  owner => 'root',
+  #  group => 'root',
+  #  mode => '0644',
+  #  content => "Welcome, oh great Puppppet Master!\n",
+  #}
+  
+  exec { 'cowsay 'Welcome to S{::fqdn}! > /etc/motd': 
   }
   
   host { 'testing.puppetlabs.vm':
