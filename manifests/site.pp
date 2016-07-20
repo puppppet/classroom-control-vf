@@ -10,28 +10,27 @@ ini_setting { 'random ordering':
   value   => 'title-hash',
 }
 
-node 'default' {
 #node default {
-  # This is where you can declare classes for all nodes.
-  # Example:
-  #   class { 'my_class': }
-  notify { "Hello Silly, my name is most assuredly ${::hostname}": }
-
-  exec { 'welcome':
-  command => "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd", 
-  creates => '/etc/motd',
-  }
-  
-  host { 'testing.puppetlabs.vm':
-  ensure => present,
-  ip => '127.0.0.1',
-  host_aliases => ['foo', 'foobar'],
-  }
-
-  #Exercise 9.2 - declare the fundamentals user
-  include users
-
-  #Exercise 9.3 - declare the /etc/skeleton module
-  include skeleton
+#  # This is where you can declare classes for all nodes.
+#  # Example:
+#  #   class { 'my_class': }
+#  notify { "Hello Silly, my name is most assuredly ${::hostname}": }#
+#
+#  exec { 'welcome':
+#  command => "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd", 
+#  creates => '/etc/motd',
+#  }
+#  
+#  host { 'testing.puppetlabs.vm':
+#  ensure => present,
+#  ip => '127.0.0.1',
+#  host_aliases => ['foo', 'foobar'],
+#  }
+#
+#  #Exercise 9.2 - declare the fundamentals user
+#  include users
+#
+#  #Exercise 9.3 - declare the /etc/skeleton module
+#  include skeleton
   
 }
