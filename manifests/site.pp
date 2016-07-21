@@ -40,7 +40,6 @@ node 'puppppet.puppetlabs.vm' {
   include memcached
   include skeleton
   include nginx
-  include aliases
 
   if $facts['is_virtual'] == true {
     $upper = capitalize($facts['virtual'])
