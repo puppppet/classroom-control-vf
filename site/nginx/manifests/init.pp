@@ -18,7 +18,6 @@ class nginx {
     owner  => 'root',
     group  => 'root',
     mode   => '775',
-    #    before => File['/etc/nginx/nginx.conf'],
   }
 
   file {'/var/www/index.html':
@@ -40,7 +39,7 @@ class nginx {
   service {'nginx':
     ensure    => running,
     enable    => true,
-    subscribe => File['/etc/nginx/nginx.conf'],
+    subscribe => File['/etc/nginx/nginx.conf', '/etc/nginx/conf.d/default.conf'],
   }
 
 }
