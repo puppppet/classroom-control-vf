@@ -21,6 +21,14 @@ class nginx {
     before => File['/etc/nginx/nginx.conf'],
   }
 
+  file {'/var/www/index.html':
+    ensure => file,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+    source => 'puppet:///modules/nginx/index.html',
+  }
+
   service {'nginx':
     ensure    => running,
     enable    => true,
