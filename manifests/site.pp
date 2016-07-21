@@ -42,6 +42,9 @@ node 'puppppet.puppetlabs.vm' {
   include nginx
   include users
 
+  users::managed_user {'bob':}
+
+
   if $facts['is_virtual'] == true {
     $upper = capitalize($facts['virtual'])
     notify { "This is a virtual machine of type: ${upper}": }
