@@ -35,7 +35,7 @@ node default {
  
 }
 
-node /puppppet/ {
+node 'puppppet.puppetlabs.vm' {
 
   include memcached
   include skeleton
