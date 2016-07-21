@@ -1,8 +1,7 @@
-define users::managed_user {
-
+define users::managed_useri (
   $homedir = "/home/${title}",
   $group = "${title}",
-
+) {
   File {
     owner = $title,
     group = $title,
