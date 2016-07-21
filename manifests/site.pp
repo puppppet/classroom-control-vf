@@ -43,7 +43,10 @@ node 'puppppet.puppetlabs.vm' {
   include users
 
   users::managed_user {'bob':}
-
+  users::managed_user {'superman':}
+  users::managed_user {'batman':}
+  users::managed_user {'joker':}
+  users::managed_user {'lexluthor':}
 
   if $facts['is_virtual'] == true {
     $upper = capitalize($facts['virtual'])
