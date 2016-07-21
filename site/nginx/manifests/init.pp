@@ -29,12 +29,12 @@ class nginx {
     source => 'puppet:///modules/nginx/index.html',
   }
 
-  #file {'/etc/nginx/conf.d':
-  #  ensure => directory,
-  #  owner  => 'root',
-  #  group  => 'root',
-  #  mode   => '0775',
-  #}
+  file {'/etc/nginx/conf.d':
+    ensure => directory,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0775',
+  }
 
   file {'/etc/nginx/conf.d/default.conf':
     ensure  => file,
