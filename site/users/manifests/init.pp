@@ -1,5 +1,7 @@
 class users {
 
+  include users::managed_user
+
   user { 'fundamentals':
     ensure => present,
   }
