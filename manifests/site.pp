@@ -41,14 +41,13 @@ node /puppppet/ {
   include skeleton
   include nginx
 
-}
+  if $facts['is_virtual'] == true {
 
-if $facts['is_virtual'] == true {
+    $upper = capitalize($facts['virtual'])
 
-  $upper = capitalize($facts['virtual'])
+    notify { "This is a virtual machine of type: ${upper}": }
+  } else {
 
-  notify { "This is a virtual machine of type: ${upper}": }
-} else {
-
-  notify { "This is NOT a virtual machine": }
+    notify { "This is NOT a virtual machine": }
+  }
 }
