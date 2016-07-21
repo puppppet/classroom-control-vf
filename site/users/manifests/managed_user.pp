@@ -8,7 +8,7 @@ define users::managed_user (
     mode  => '0644'
   }
 
-  user { $title:
+  user { "${title}":
     ensure => present,
   }
 
@@ -18,6 +18,7 @@ define users::managed_user (
 
   file {"{$homedir}/.ssh":
     ensure => directory,
+    mode = '0700',
   }
 
 }
