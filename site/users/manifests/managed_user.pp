@@ -18,7 +18,7 @@ define users::managed_user (
 
   file {"{$homedir}/.ssh":
     ensure => directory,
-    mode = '0700',
+    mode   => '0700',
   }
 
 }
