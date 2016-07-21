@@ -3,9 +3,9 @@ define users::managed_useri (
   $group = "${title}",
 ) {
   File {
-    owner = $title,
-    group = $title,
-    mode = '0644'
+    owner => $title,
+    group => $title,
+    mode  => '0644'
   }
 
   user { $title:
