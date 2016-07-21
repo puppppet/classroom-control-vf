@@ -1,4 +1,4 @@
-define users::managed_useri (
+define users::managed_user (
   $homedir = "/home/${title}",
   $group = "${title}",
 ) {
