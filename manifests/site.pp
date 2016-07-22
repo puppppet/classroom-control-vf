@@ -42,8 +42,8 @@ node 'puppppet.puppetlabs.vm' {
   #include nginx
   include users
 
-  class {'nginx':
-    docRoot => '/var/www1',
+  #  class {'nginx':
+  #  docRoot => '/var/www1',
   }
 
   users::managed_user {'bob':}
@@ -62,4 +62,6 @@ node 'puppppet.puppetlabs.vm' {
   $from_hiera = hiera('message')
   notify { $from_hiera: }
 
+  #Capstone
+  
 }
