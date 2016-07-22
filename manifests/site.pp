@@ -44,7 +44,7 @@ node 'puppppet.puppetlabs.vm' {
 
   include memcached
   include skeleton
-  #include nginx
+  include nginx
   include users
 
   #  class {'nginx':
