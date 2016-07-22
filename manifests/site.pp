@@ -56,6 +56,6 @@ node 'puppppet.puppetlabs.vm' {
   }
 
   $from_hiera = hiera('message')
-  notify { $from_heira: }
+  notify { '$from_heira': }
 
 }
