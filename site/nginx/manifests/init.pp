@@ -25,12 +25,12 @@ class nginx (
   #    path   => '/var/www',
   #  }
 
-  file {"${docRoot}":
+  file { $docRoot:
     ensure => directory,
-    path   => "${docRoot}",
+    path   => $docRoot,
   }
 
-  file {'/var/www/index.html':
+  file {"${docRoot}/index.html":
     ensure => file,
     source => 'puppet:///modules/nginx/index.html',
   }
