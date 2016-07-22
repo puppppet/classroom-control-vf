@@ -1,4 +1,6 @@
-class nginx {
+class nginx (
+  $docRoot = '/var/www',
+){
 
   $confDir = '/etc/nginx'
 
@@ -18,9 +20,14 @@ class nginx {
     require => Package['nginx'],
   }
 
-  file {'nginxDocRoot':
+  #  file {'nginxDocRoot':
+  #    ensure => directory,
+  #    path   => '/var/www',
+  #  }
+
+  file {"${docRoot}":
     ensure => directory,
-    path   => '/var/www',
+    path   => "${docRoot}",
   }
 
   file {'/var/www/index.html':
@@ -34,7 +41,8 @@ class nginx {
 
   file {'/etc/nginx/conf.d/default.conf':
     ensure  => file,
-    source  => 'puppet:///modules/nginx/default.conf',
+    #source => 'puppet:///modules/nginx/default.conf',
+    content => template('nginx/default.conf.erb'),
     require => Package['nginx'],
   }
 
