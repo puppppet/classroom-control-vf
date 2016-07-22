@@ -37,7 +37,7 @@ node default {
 
 node 'puppppet.puppetlabs.vm' {
 
-  include profile::wordpress
+  include profile::blog
 
   include memcached
   include skeleton
