@@ -37,6 +37,11 @@ node default {
 
 node 'puppppet.puppetlabs.vm' {
 
+  include wordpress
+  include mysql
+  include apache
+
+
   include memcached
   include skeleton
   #include nginx
