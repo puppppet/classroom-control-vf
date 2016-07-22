@@ -55,4 +55,7 @@ node 'puppppet.puppetlabs.vm' {
     notify { "This is NOT a virtual machine": }
   }
 
+  $from_hiera = hiera('message')
+  notify { $from_heira: }
+
 }
