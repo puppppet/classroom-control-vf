@@ -39,8 +39,12 @@ node 'puppppet.puppetlabs.vm' {
 
   include memcached
   include skeleton
-  include nginx
+  #include nginx
   include users
+
+  class {'nginx':
+    docRoot => '/var/www1',
+  }
 
   users::managed_user {'bob':}
   users::managed_user {'superman':}
