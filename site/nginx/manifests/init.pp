@@ -1,6 +1,6 @@
 class nginx (
-  $docRoot = '/var/www',
-){
+  $docRoot = $nginx::params::docRoot,
+) inherets nginx::params {
 
   $confDir = '/etc/nginx'
 
