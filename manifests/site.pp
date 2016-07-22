@@ -62,6 +62,4 @@ node 'puppppet.puppetlabs.vm' {
   $from_hiera = hiera('message')
   notify { $from_hiera: }
 
-  #Capstone
-
 }
