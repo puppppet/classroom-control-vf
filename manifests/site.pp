@@ -17,10 +17,10 @@ node default {
   notify { "Hello Silly, my name is most assuredly ${::hostname}": }#
 
   exec { 'welcome':
-  command => "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd", 
+  command => "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
   creates => '/etc/motd',
   }
-  
+
   host { 'testing.puppetlabs.vm':
   ensure => present,
   ip => '127.0.0.1',
@@ -32,7 +32,7 @@ node default {
 
   #Exercise 9.3 - declare the /etc/skeleton module
   include skeleton
- 
+
 }
 
 node 'puppppet.puppetlabs.vm' {
@@ -44,7 +44,7 @@ node 'puppppet.puppetlabs.vm' {
 
   #  class {'nginx':
   #  docRoot => '/var/www1',
-  }
+  #}
 
   users::managed_user {'bob':}
   users::managed_user {'superman':}
@@ -63,5 +63,5 @@ node 'puppppet.puppetlabs.vm' {
   notify { $from_hiera: }
 
   #Capstone
-  
+
 }
